@@ -1,4 +1,3 @@
-class Admin::CommentsController < ApplicationController
-  def destroy
-  end
+class Admin::CommentsController < Admin::ApplicationController
+  def destroy; end
 end
