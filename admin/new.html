@@ -8,11 +8,11 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 
-  <title>Contact | bartyBlog</title>
+  <title>Admin Posts | bartyBlog</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,13 +26,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="index.html"><h1>bartyBlog</h1></a>
+        <a class="navbar-brand" href="../index.html"><h1>bartyBlog<span>/Manager</span></h1></a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="active"><a href="contact.html">Contact</a></li>
+          <li class="active"><a href="posts.html">Posts</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="users.html">Users</a></li>
         </ul>
         <form class="navbar-form navbar-right search-form" role="search">
           <div class="form-group">
@@ -48,32 +48,24 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
           <div class="well">
-            <h2 class="page-header">Contact Us</h2>
+            <h2 class="page-header">New Post</h2>
             <form role="form">
               <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name">
+                <label for="name">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter Title">
               </div>
               <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="category" placeholder="Enter Category">
               </div>
               <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" placeholder="Enter message"></textarea>
+                <label for="message">Body</label>
+                <textarea class="form-control" id="message" placeholder="Enter Message"></textarea>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="list-group">
-            <a href="#" class="list-group-item">News</a>
-            <a href="#" class="list-group-item">Tutorials</a>
-            <a href="#" class="list-group-item">Releases</a>
-            <a href="#" class="list-group-item">Events</a>
           </div>
         </div>
       </div>
@@ -81,7 +73,7 @@
   </section>
 
   <footer>
-    <p>Copyright &copy; 2017, BartyBlog | <a href="admin/login.html">Admin Login</a></p>
+    <p>Copyright &copy; 2017, BartyBlog | <a href="login.html">Admin Login</a></p>
   </footer>
 
   <!-- Bootstrap core JavaScript

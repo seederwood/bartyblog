@@ -1,7 +1,27 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-color: #36424a;
+  color: #fff;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.btn, input[type='email'], input[type='password'] {
+  border: none;
+  border-radius: 0;
+}
+
+
+.btn-primary {
+  background: #ff953f;
+}
+
+.btn:hover {
+  background: #ccc;
+  color: #666;
 }
 
 .form-signin {
@@ -12,6 +32,7 @@ body {
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
+  text-align: center;
 }
 .form-signin .checkbox {
   font-weight: normal;
@@ -27,14 +48,4 @@ body {
 }
 .form-signin .form-control:focus {
   z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
