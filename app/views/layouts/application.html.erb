@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>bartyBlog</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
 
     <%= render 'shared/nav' %>
 
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
 
-            <% if flash[:notice] %>
-              <div class="alert alert-success">
-                <%= flash[:notice] %>
-              </div>
-            <% end %>
+                        <% if flash[:notice] %>
+                            <div class="alert alert-success">
+                                <%= flash[:notice] %>
+                            </div>
+                        <% end %>
 
-            <% if flash[:alert] %>
-              <div class="alert alert-danger">
-                <%= flash[:alert] %>
-              </div>
-            <% end %>
+                        <% if flash[:alert] %>
+                            <div class="alert alert-danger">
+                                <%= flash[:alert] %>
+                            </div>
+                        <% end %>
+                        <well>
+                            <%= yield %>
+                        </well>
+                    </div>
+                    <div class="col-md-4">
+                        <%= render 'shared/list' %>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <%= yield %>
-          </div>
-          <div class="col-md-4">
-            <%= render 'shared/list' %>
-          </div>
-        </div>
-      </div>
-    </section>
+        <%= render 'shared/footer' %>
 
-    <%= render 'shared/footer' %>
-
-    <!-- Bootstrap core JavaScript
+            <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-      window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-    </script>
-    <script src="js/bootstrap.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script>
+                window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+            </script>
+            <script src="js/bootstrap.js"></script>
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
 </html>
