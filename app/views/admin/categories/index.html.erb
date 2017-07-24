@@ -1,10 +1,11 @@
 <h2 class="page-header">
     Manage Categories
-    <%= link_to "Create New", new_admin_category_path, class: 'btn btn-primary pull-right' %>
+    <%= link_to "Create New", new_admin_category_path, class: 'btn btn-success pull-right' %>
 </h2>
 <table class="table table-striped">
     <tr>
         <th>Category Title</th>
+        <th>Post Count</th>
         <th>Created</th>
         <th>Last Updated</th>
         <th>Actions</th>
@@ -13,6 +14,9 @@
         <tr>
             <td>
                 <%= category.name %>
+            </td>
+            <td>
+                <%= category.posts.count %>
             </td>
             <td>
                 <%= category.created_at.strftime('%d %B %Y | %H:%M') %>

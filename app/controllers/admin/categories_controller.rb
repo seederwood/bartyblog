@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::ApplicationController
-  before_action :get_category, only: %i[edit update destroy]
+  before_action :set_category, only: %i[edit update show destroy]
   def new
     @page_title = 'Add Category'
     @category = Category.new
@@ -42,7 +42,7 @@ class Admin::CategoriesController < Admin::ApplicationController
     params.require(:category).permit(:name)
   end
 
-  def get_category
+  def set_category
     @category = Category.find(params[:id])
   end
 end
