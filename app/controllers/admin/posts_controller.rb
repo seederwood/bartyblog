@@ -1,4 +1,5 @@
 class Admin::PostsController < Admin::ApplicationController
+  include Admin::PostsHelper
   before_action :set_post, only: %i[edit update destroy]
   def new
     @page_title = 'Add Post'
@@ -33,16 +34,11 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def index
-    @posts= Post.all.order('updated_at desc')
-  end
-
-  private
-
-  def post_params
-    params.require(:post).permit(:title, :category_id, :user_id, :tags, :body, :image)
-  end
-
-  def set_post
-    @post = Post.find(params[:id])
+    @posts = Post.all
+    if params[:search]
+      @posts = Post.search(params[:search]).all.order('updated_at desc').paginate(per_page: 10, page: params[:page])
+    else
+      @posts = Post.all.order('updated_at desc').paginate(per_page: 10, page: params[:page])
+    end
   end
 end

@@ -1,4 +1,6 @@
 class Admin::CategoriesController < Admin::ApplicationController
+  include Admin::CategoriesHelper
+
   before_action :set_category, only: %i[edit update show destroy]
   def new
     @page_title = 'Add Category'
@@ -33,16 +35,11 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def index
-    @categories = Category.all.order('updated_at desc')
-  end
-
-  private
-
-  def category_params
-    params.require(:category).permit(:name)
-  end
-
-  def set_category
-    @category = Category.find(params[:id])
+    @categories = Category.all
+    if params[:search]
+      @categories = Category.search(params[:search]).all.order('updated_at desc').paginate(per_page: 10, page: params[:page])
+    else
+      @categories = Category.all.order('updated_at desc').paginate(per_page: 10, page: params[:page])
+    end
   end
 end

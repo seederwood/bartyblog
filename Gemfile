@@ -53,6 +53,7 @@ gem 'autoprefixer-rails', '~> 7.1', '>= 7.1.2.3'
 gem 'bootstrap-sass'
 gem 'mail_form'
 gem 'simple_form'
+gem 'will_paginate'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
