@@ -8,6 +8,11 @@ class Admin::PostsController < Admin::ApplicationController
 
   def create
     @post = Post.new(post_params)
+
+    if params[:post][:image].blank?
+      @post.image = nil
+    end
+
     if @post.save
       flash[:notice] = "Post #{@post.title} Created successfully!"
       redirect_to admin_posts_path
@@ -19,6 +24,11 @@ class Admin::PostsController < Admin::ApplicationController
   def edit; end
 
   def update
+
+    if params[:post][:image].blank?
+      @post.image = nil
+    end
+
     if @post.update(post_params)
       flash[:notice] = "Post #{@post.title} Updated successfully!"
       redirect_to admin_posts_path

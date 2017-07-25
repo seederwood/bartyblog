@@ -39,7 +39,7 @@ body {
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     background: none;
-    color: $button-color !important;
+    color: $active-color !important;
 }
 
 .search-form {
@@ -77,6 +77,10 @@ body {
 
 .btn-primary {
     background: $button-color;
+}
+
+.btn-success {
+    background: $button-create-color;
 }
 
 .btn:hover {
