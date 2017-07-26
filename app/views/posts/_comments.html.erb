@@ -1,0 +1,22 @@
+<div class="comments">
+  <h2 class="page-header">
+    <%= pluralize(@post.comments.length, "Comment") %> 
+  </h2>
+    <% @post.comments.each do |comment| %>
+      <div class="comment">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="well">
+              <h4>
+                <%= comment.name %><span> / <%= comment.created_at.strftime('%d %B %Y | %H:%M') %></span>
+              </h4>
+                <%= comment.body %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  <%= render 'comments/new_comment'%>
+
+</div>

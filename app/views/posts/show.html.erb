@@ -1,2 +1,23 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="well post-single">
+  <h2 class="page-header">
+    <%= @post.title %>
+  </h2>
+  <% if @post.created_at == @post.updated_at %>
+    <small>
+      Posted by <%= @post.user.name %> on <%= @post.created_at.strftime('%d %B %Y | %H:%M') %>
+    </small>
+  <% else %>
+    <small>
+      Posted by <%= @post.user.name %> on <%= @post.created_at.strftime('%d %B %Y | %H:%M') %> <br>
+      Last Updated at <%= @post.updated_at.strftime('%d %B %Y | %H:%M') %>
+    </small>
+  <% end %>
+  <br>
+  <% if @post.image.exists? %>
+    <%= image_tag @post.image.url(:large) %>
+  <% end %>
+  <br>
+  <%= raw @post.body %>
+</div>
+
+<%= render 'comments'%>

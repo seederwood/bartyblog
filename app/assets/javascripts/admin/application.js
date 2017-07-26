@@ -16,8 +16,5 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require ckeditor-jquery
+//= require admin/init_ckeditor
 //= require_tree .
-
-$('.ckeditor').ckeditor({
-    // optional config
-});
