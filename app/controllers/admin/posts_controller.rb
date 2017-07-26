@@ -44,7 +44,6 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def index
-    @posts = Post.all
     if params[:search]
       @posts = Post.search(params[:search]).all.order('updated_at desc').paginate(per_page: 10, page: params[:page])
     else
