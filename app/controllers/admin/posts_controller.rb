@@ -1,6 +1,8 @@
 class Admin::PostsController < Admin::ApplicationController
   include Admin::PostsHelper
+  before_action :verify_logged_in
   before_action :set_post, only: %i[edit update destroy]
+  
   def new
     @page_title = 'Add Post'
     @post = Post.new

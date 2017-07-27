@@ -1,6 +1,6 @@
 class Admin::CategoriesController < Admin::ApplicationController
   include Admin::CategoriesHelper
-
+  before_action :verify_logged_in
   before_action :set_category, only: %i[edit update show destroy]
   def new
     @page_title = 'Add Category'

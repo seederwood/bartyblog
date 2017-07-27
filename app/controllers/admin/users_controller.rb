@@ -1,5 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
   include Admin::UsersHelper
+  before_action :verify_logged_in
   before_action :set_user, only: %i[edit update destroy]
   def new
     @page_title = 'Add User'
